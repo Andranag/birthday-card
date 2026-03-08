@@ -1,0 +1,721 @@
+body {
+    text-align: center;
+    font-family: 'Happy Monkey', cursive;
+    background: linear-gradient(var(--gradient-start), var(--gradient-end));
+    color: #ffffff;
+    transition: background 0.5s ease;
+}
+
+body.has-custom-background {
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+/* CSS Variables for Dynamic Theming */
+:root {
+    --gradient-start: purple;
+    --gradient-end: #EFB0C9;
+    --accent-color: #EFB0C9;
+    --accent-hover: #E095B8;
+}
+
+/* Male Theme */
+body.masculine-theme {
+    --gradient-start: #1e3c72;
+    --gradient-end: #2a5298;
+    --accent-color: #4169E1;
+    --accent-hover: #1e90ff;
+}
+
+/* Female Theme */
+body.feminine-theme {
+    --gradient-start: #ff6b9d;
+    --gradient-end: #feca57;
+    --accent-color: #ff6b9d;
+    --accent-hover: #ee5a6f;
+}
+
+/* Non-binary Theme */
+body.nonbinary-theme {
+    --gradient-start: #f7e733;
+    --gradient-end: #9b59b6;
+    --accent-color: #f7e733;
+    --accent-hover: #f4d03f;
+}
+
+/* Neutral Theme */
+body.neutral-theme {
+    --gradient-start: purple;
+    --gradient-end: #EFB0C9;
+    --accent-color: #EFB0C9;
+    --accent-hover: #E095B8;
+}
+
+h1, h2, h3, h4, p {
+    text-shadow: 0 0 1px black;
+}
+
+#bff-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 6px solid var(--accent-color);
+    margin-bottom: 10px;
+    object-fit: cover;
+}
+
+#bday-age {
+    background: var(--accent-color);
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 5px 0 10px 0;
+}
+
+#bday-date {
+    margin: 0;
+    background: var(--accent-color);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+#header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeInDown 1s ease-out;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#bff-img {
+    animation: bounceIn 1.2s ease-out 0.3s both;
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+    70% {
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+#bday-age, #bday-date {
+    animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.gift-section {
+    margin-top: 50px;
+}
+
+.gift-title {
+    margin-bottom: 10px;
+}
+
+.gift-hint {
+    margin-top: 0;
+}
+
+#gift-img-cheers {
+    height: 200px;
+}
+
+.gift-img {
+    margin: 20px auto;
+    max-width: 400px;
+    height: 400px;
+    border: 6px solid white;
+    border-radius: 10px;
+    background-image: url("images/gift-cover.jpg");
+    background-size: cover;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.gift-img.revealed {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.gift-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+#gift-img-happy.revealed {
+    background-image: url("images/happy.gif");
+}
+
+#gift-img-happy:hover {
+    background-image: url("images/happy.gif");
+}
+
+#gift-img-hot.revealed {
+    background-image: url("images/hot.gif");
+}
+
+#gift-img-hot:hover {
+    background-image: url("images/hot.gif");
+}
+
+#gift-img-genius.revealed {
+    background-image: url("images/genius.gif");
+}
+
+#gift-img-genius:hover {
+    background-image: url("images/genius.gif");
+}
+
+#gift-img-badass.revealed {
+    background-image: url("images/badass.gif");
+}
+
+#gift-img-badass:hover {
+    background-image: url("images/badass.gif");
+}
+
+#gift-img-cheers.revealed {
+    background-image: url("images/cheers.gif");
+}
+
+#gift-img-cheers:hover {
+    background-image: url("images/cheers.gif");
+}
+
+/* 
+Add the footer paragraph according to the design. 
+Configure the anchor tag to open the link in a new tab.
+Forgotten how to do it? Google it! 
+
+Link: 
+https://scrimba.com/learn/htmlandcss
+
+Text:
+Want to create your own Birthday GIFt site? Take this HTML & CSS course.
+*/
+
+/* Background Selector Styles */
+.background-selector {
+    margin-top: 10px;
+}
+
+.background-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.background-option {
+    text-align: center;
+    cursor: pointer;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    padding: 8px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.background-option:hover {
+    border-color: var(--accent-color);
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.background-option.selected {
+    border-color: var(--accent-color);
+    background: rgba(239, 176, 201, 0.2);
+    box-shadow: 0 0 15px rgba(239, 176, 201, 0.3);
+}
+
+.background-preview {
+    width: 60px;
+    height: 40px;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    background-size: cover;
+    background-position: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.background-option span {
+    display: block;
+    font-size: 0.7rem;
+    color: #ffffff;
+}
+
+/* Recent Photos Navigation */
+.recent-photos {
+    grid-column: span 2;
+}
+
+.recent-photo-container {
+    text-align: center;
+}
+
+.recent-photo-container img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 8px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.photo-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.photo-nav-btn {
+    background: var(--accent-color);
+    border: none;
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.photo-nav-btn:hover {
+    background: var(--accent-hover);
+    transform: scale(1.1);
+}
+
+.photo-nav-btn:disabled {
+    background: rgba(255, 255, 255, 0.3);
+    cursor: not-allowed;
+    transform: scale(1);
+}
+
+#recent-photo-label {
+    font-size: 0.7rem;
+    color: #ffffff;
+    min-width: 50px;
+}
+
+/* Gender Selector Styles */
+.gender-selector {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.gender-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.05);
+    flex: 1;
+    max-width: 80px;
+}
+
+.gender-option:hover {
+    border-color: var(--accent-color);
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.gender-option.selected {
+    border-color: var(--accent-color);
+    background: rgba(239, 176, 201, 0.2);
+    box-shadow: 0 0 15px rgba(239, 176, 201, 0.3);
+}
+
+.gender-icon {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.gender-option span {
+    font-size: 0.8rem;
+    color: #ffffff;
+}
+
+.image-selector {
+    margin-top: 10px;
+}
+
+.image-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.image-option {
+    text-align: center;
+    cursor: pointer;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    padding: 8px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.image-option:hover {
+    border-color: var(--accent-color);
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.image-option.selected {
+    border-color: var(--accent-color);
+    background: rgba(239, 176, 201, 0.2);
+    box-shadow: 0 0 15px rgba(239, 176, 201, 0.3);
+}
+
+.image-option img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 5px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.image-option span {
+    display: block;
+    font-size: 0.8rem;
+    color: #ffffff;
+}
+
+.upload-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 90px;
+}
+
+.upload-icon {
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+
+.selected-preview {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.selected-preview img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--accent-color);
+}
+
+.selected-preview span {
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+/* Form Styles */
+.setup-section {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.setup-section h2 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    font-family: 'Happy Monkey', cursive;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.form-group input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 15px rgba(239, 176, 201, 0.3);
+}
+
+.form-group input[type="date"] {
+    cursor: pointer;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    background: var(--accent-color);
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Happy Monkey', cursive;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 1px black;
+    margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(239, 176, 201, 0.4);
+}
+
+.reset-button {
+    display: block;
+    margin: 20px auto 0;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    font-family: 'Happy Monkey', cursive;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.reset-button:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-1px);
+}
+
+.hidden {
+    display: none;
+}
+
+/* Birthday Card Container */
+#birthday-card {
+    background: linear-gradient(var(--gradient-start), var(--gradient-end));
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 40px;
+    margin: 20px auto;
+    max-width: 800px;
+    border: 3px solid var(--accent-color);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+#birthday-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    z-index: 1;
+}
+
+#birthday-card > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* Footer Styles */
+footer {
+    margin-top: 60px;
+    padding: 30px 20px;
+    background: linear-gradient(var(--gradient-start), var(--gradient-end));
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 2px solid var(--accent-color);
+    position: relative;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    z-index: 1;
+}
+
+footer > * {
+    position: relative;
+    z-index: 2;
+}
+
+footer p {
+    font-size: 1rem;
+    margin: 0;
+}
+
+footer a {
+    color: var(--accent-color);
+    text-decoration: underline;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--accent-hover);
+    text-shadow: 0 0 10px rgba(239, 176, 201, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 0 20px;
+    }
+    
+    #birthday-card {
+        padding: 30px 20px;
+        margin: 10px auto;
+    }
+    
+    .setup-section {
+        margin: 30px auto;
+        padding: 20px;
+    }
+    
+    .image-options {
+        grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+        gap: 8px;
+    }
+    
+    .image-option img {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .image-option span {
+        font-size: 0.7rem;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    h2 {
+        font-size: 1.2rem;
+    }
+    
+    #bff-img {
+        width: 160px;
+        height: 160px;
+    }
+    
+    .gift-img {
+        max-width: 300px;
+        height: 300px;
+    }
+    
+    .gift-section {
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    #birthday-card {
+        padding: 20px 15px;
+        margin: 5px auto;
+    }
+    
+    h1 {
+        font-size: 1.3rem;
+    }
+    
+    h2 {
+        font-size: 1.1rem;
+    }
+    
+    #bff-img {
+        width: 140px;
+        height: 140px;
+    }
+    
+    .gift-img {
+        max-width: 250px;
+        height: 250px;
+    }
+    
+    .gift-section {
+        margin-top: 25px;
+    }
+}

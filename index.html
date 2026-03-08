@@ -1,0 +1,163 @@
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Happy+Monkey&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div id="setup-form" class="setup-section">
+            <h2>Customize Birthday Card</h2>
+            <form id="birthday-form">
+                <div class="form-group">
+                    <label for="name-input">Birthday Person's Name:</label>
+                    <input type="text" id="name-input" placeholder="Enter name" required>
+                </div>
+                <div class="form-group">
+                    <label for="age-input">Age:</label>
+                    <input type="number" id="age-input" placeholder="Enter age" required>
+                </div>
+                <div class="form-group">
+                    <label for="gender-input">Pronouns:</label>
+                    <div class="gender-selector">
+                        <div class="gender-option" data-gender="masculine">
+                            <div class="gender-icon">👨</div>
+                            <span>He/Him</span>
+                        </div>
+                        <div class="gender-option" data-gender="feminine">
+                            <div class="gender-icon">👩</div>
+                            <span>She/Her</span>
+                        </div>
+                        <div class="gender-option" data-gender="nonbinary">
+                            <div class="gender-icon">🧑‍🦱</div>
+                            <span>They/Them</span>
+                        </div>
+                        <div class="gender-option selected" data-gender="neutral">
+                            <div class="gender-icon">🎊</div>
+                            <span>Prefer not to say</span>
+                        </div>
+                    </div>
+                    <input type="hidden" id="gender-input" value="neutral" required>
+                </div>
+                <div class="form-group">
+                    <label for="date-input">Birth Date:</label>
+                    <input type="date" id="date-input" required>
+                </div>
+                <div class="form-group">
+                    <label>Profile Image:</label>
+                    <div class="image-selector">
+                        <div class="image-options">
+                            <div class="image-option recent-photos" id="recent-photos">
+                                <div class="recent-photo-container">
+                                    <img id="recent-photo-img" src="images/sofia.jpg" alt="Recent">
+                                    <div class="photo-nav">
+                                        <button type="button" id="prev-photo" class="photo-nav-btn">‹</button>
+                                        <span id="recent-photo-label">Recent</span>
+                                        <button type="button" id="next-photo" class="photo-nav-btn">›</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="image-option" data-image="https://picsum.photos/seed/birthday1/200/200.jpg">
+                                <img src="https://picsum.photos/seed/birthday1/200/200.jpg" alt="Person 1">
+                                <span>Option 1</span>
+                            </div>
+                            <div class="image-option" data-image="https://picsum.photos/seed/birthday2/200/200.jpg">
+                                <img src="https://picsum.photos/seed/birthday2/200/200.jpg" alt="Person 2">
+                                <span>Option 2</span>
+                            </div>
+                            <div class="image-option" data-image="https://picsum.photos/seed/birthday3/200/200.jpg">
+                                <img src="https://picsum.photos/seed/birthday3/200/200.jpg" alt="Person 3">
+                                <span>Option 3</span>
+                            </div>
+                            <div class="image-option upload-option" id="custom-upload">
+                                <div class="upload-icon">📷</div>
+                                <span>Upload</span>
+                                <input type="file" id="file-input" accept="image/*" style="display: none;">
+                            </div>
+                        </div>
+                        <div class="selected-preview">
+                            <img id="selected-image-preview" src="images/sofia.jpg" alt="Selected">
+                            <span id="selected-image-name">Recent</span>
+                        </div>
+                    </div>
+                    <input type="hidden" id="image-input" value="images/sofia.jpg">
+                </div>
+                <div class="form-group">
+                    <label>Background Image:</label>
+                    <div class="background-selector">
+                        <div class="background-options">
+                            <div class="background-option" data-background="gradient">
+                                <div class="background-preview" style="background: linear-gradient(purple, #EFB0C9)"></div>
+                                <span>Gradient</span>
+                            </div>
+                            <div class="background-option" data-background="https://picsum.photos/seed/birthday-bg1/1920/1080.jpg">
+                                <div class="background-preview" style="background-image: url('https://picsum.photos/seed/birthday-bg1/1920/1080.jpg')"></div>
+                                <span>Celebration</span>
+                            </div>
+                            <div class="background-option" data-background="https://picsum.photos/seed/birthday-bg2/1920/1080.jpg">
+                                <div class="background-preview" style="background-image: url('https://picsum.photos/seed/birthday-bg2/1920/1080.jpg')"></div>
+                                <span>Party</span>
+                            </div>
+                            <div class="background-option" data-background="https://picsum.photos/seed/birthday-bg3/1920/1080.jpg">
+                                <div class="background-preview" style="background-image: url('https://picsum.photos/seed/birthday-bg3/1920/1080.jpg')"></div>
+                                <span>Festive</span>
+                            </div>
+                            <div class="background-option upload-option" id="bg-custom-upload">
+                                <div class="upload-icon">🖼️</div>
+                                <span>Upload</span>
+                                <input type="file" id="bg-file-input" accept="image/*" style="display: none;">
+                            </div>
+                        </div>
+                        <div class="selected-preview">
+                            <div id="selected-bg-preview" class="background-preview" style="background: linear-gradient(purple, #EFB0C9)"></div>
+                            <span id="selected-bg-name">Gradient</span>
+                        </div>
+                    </div>
+                    <input type="hidden" id="background-input" value="gradient">
+                </div>
+                <button type="submit">Create Birthday Card</button>
+            </form>
+        </div>
+
+        <div id="birthday-card" class="hidden">
+            <div id="header">
+                <h1>Today is <span id="name-display">#name</span>'s birthday 🎉</h1>
+                <img id="bff-img" src="images/sofia.jpg">
+                <h2 id="bday-age">24 years old</h2>
+                <h4 id="bday-date">27.02.2002</h4>
+            </div>
+        
+        <div class="gift-section">
+            <h2 class="gift-title">Here's how happy I am for you today 🥳</h2>
+            <h3 class="gift-hint">(Hover over or click the gift)</h3>
+            <div class="gift-img" id="gift-img-happy" tabindex="0" role="button" aria-label="Click to reveal happy birthday gif"></div>
+        </div>
+        
+        <div class="gift-section">
+            <h2 class="gift-title">How people react when you enter the room 😍</h2>
+            <div class="gift-img" id="gift-img-hot" tabindex="0" role="button" aria-label="Click to reveal hot reaction gif"></div>
+        </div>
+        
+        <div class="gift-section">
+            <h2 class="gift-title">If I had to describe you with ONE word 👇</h2>
+            <div class="gift-img" id="gift-img-genius" tabindex="0" role="button" aria-label="Click to reveal genius gif"></div>
+        </div>
+        
+        <div class="gift-section">
+            <h2 class="gift-title">The only person as badass as you 💪</h2>
+            <div class="gift-img" id="gift-img-badass" tabindex="0" role="button" aria-label="Click to reveal badass gif"></div>
+        </div>
+        
+         <div class="gift-section">
+            <h2 class="gift-title">This one's for you, my friend 🥂</h2>
+            <div class="gift-img" id="gift-img-cheers" tabindex="0" role="button" aria-label="Click to reveal cheers gif"></div>
+        </div>
+        
+        <footer>
+            <p>Want to create your own Birthday GIFt site? <a href="https://scrimba.com/learn/htmlandcss" target="_blank" rel="noopener noreferrer">Take this HTML & CSS course</a>.</p>
+            <button id="reset-btn" class="reset-button">Create New Card</button>
+        </footer>
+        </div>
+    </body>
+    <script src="script.js"></script>
+</html>
