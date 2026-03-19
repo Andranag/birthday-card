@@ -826,12 +826,12 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Preload critical images
     const criticalImages = [
-        'images/gift-cover.jpg',
-        'images/happy.gif',
-        'images/hot.gif',
-        'images/genius.gif',
-        'images/badass.gif',
-        'images/cheers.gif'
+        '/images/gift-cover.jpg',
+        '/images/happy.gif',
+        '/images/hot.gif',
+        '/images/genius.gif',
+        '/images/badass.gif',
+        '/images/cheers.gif'
     ];
     
     criticalImages.forEach(src => {
