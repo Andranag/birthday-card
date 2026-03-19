@@ -159,7 +159,7 @@ h1, h2, h3, h4, p {
     height: 400px;
     border: 6px solid white;
     border-radius: 10px;
-    background-image: url("/images/gift-cover.jpg");
+    background-image: url("images/gift-cover.jpg");
     background-size: cover;
     transition: all 0.3s ease-in-out;
     cursor: pointer;
@@ -176,43 +176,43 @@ h1, h2, h3, h4, p {
 }
 
 #gift-img-happy.revealed {
-    background-image: url("/images/happy.gif");
+    background-image: url("images/happy.gif");
 }
 
 #gift-img-happy:hover {
-    background-image: url("/images/happy.gif");
+    background-image: url("images/happy.gif");
 }
 
 #gift-img-hot.revealed {
-    background-image: url("/images/hot.gif");
+    background-image: url("images/hot.gif");
 }
 
 #gift-img-hot:hover {
-    background-image: url("/images/hot.gif");
+    background-image: url("images/hot.gif");
 }
 
 #gift-img-genius.revealed {
-    background-image: url("/images/genius.gif");
+    background-image: url("images/genius.gif");
 }
 
 #gift-img-genius:hover {
-    background-image: url("/images/genius.gif");
+    background-image: url("images/genius.gif");
 }
 
 #gift-img-badass.revealed {
-    background-image: url("/images/badass.gif");
+    background-image: url("images/badass.gif");
 }
 
 #gift-img-badass:hover {
-    background-image: url("/images/badass.gif");
+    background-image: url("images/badass.gif");
 }
 
 #gift-img-cheers.revealed {
-    background-image: url("/images/cheers.gif");
+    background-image: url("images/cheers.gif");
 }
 
 #gift-img-cheers:hover {
-    background-image: url("/images/cheers.gif");
+    background-image: url("images/cheers.gif");
 }
 
 /* 
