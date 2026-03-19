@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('Birthday Card Script Loaded Successfully!');
+    
     // Check if we have card data in URL (for sharing)
     const urlParams = new URLSearchParams(window.location.search);
     const cardId = urlParams.get('id');
